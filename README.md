@@ -150,7 +150,7 @@ Within the client VM, logged in with the admin user login, right-click Start, an
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Log in to the Domain controller VM with the admin user login info > in the Start menu, search for PowerShell ISE and run as an administrator > now copy this [Script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) (Used to create users) > now in PowerShell, create a new file and paste the script into the file within PowerShell > click the run button (this will start the creation of 10000 users) 
+Log in to the Domain controller VM with the admin user login info > in the Start menu, search for PowerShell ISE and run as an administrator > now copy this [Script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) Used to create random users > now in PowerShell, create a new file and paste the script into the file within PowerShell > click the run button (this will start the creation of 10000 users) 
 </p>
 <br />
 
