@@ -15,7 +15,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>Operating Systems Used </h2>
 
 - Windows Server 2022
-- Windows 10 (21H2)
+- Windows 11 (25H2)
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
@@ -54,7 +54,7 @@ To create a domain controller, first select create virtual machine > name virtua
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-To setup the client Vm select, create virtual machine > assign to the previously create resource group > name the vm > assign to the same region in previously used > select windows 10 pro for the image > choose appropriate size (for tutorial 2 vcpus and 8 GIB) > Set username and password > check the box under licensing > then go to the networking tab and assign the VM to the previously created vnet > Review and create
+To setup the client Vm select, create virtual machine > assign to the previously create resource group > name the vm > assign to the same region in previously used > select windows 11 pro for the image > choose appropriate size (for tutorial 2 vcpus and 8 GIB) > Set username and password > check the box under licensing > then go to the networking tab and assign the VM to the previously created vnet > Review and create
 </p>
 <br />
 
