@@ -150,7 +150,7 @@ Within the client VM, logged in with the admin user login, right-click Start, an
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Log in to the Domain controller VM with the admin user login info > in the Start menu, search for PowerShell ISE and run as an administrator > now copy this [Script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) Used to create random users > now in PowerShell, create a new file and paste the script into the file within PowerShell > click the run button (this will start the creation of 10000 users) 
+Log in to the Domain controller VM with the admin user login info > in the Start menu, search for PowerShell ISE and run as an administrator > now copy the script at the top (Used to create random users) > now in PowerShell, create a new file and paste the script into the file within PowerShell > click the run button (this will start the creation of 10000 users into the _EMPLOYEES Folder) 
 </p>
 <br />
 
@@ -158,7 +158,7 @@ Log in to the Domain controller VM with the admin user login info > in the Start
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now open Active Directory Users and Computers > right-click the _EMPLOYEES folder and refresh > within the folder pick any name/username that was created with the script > now log in to the client VM using mydomain.com\(picked name/username) and password as Password1 
+Now open Active Directory Users and Computers > right-click the _EMPLOYEES folder and refresh > within the folder pick any name/username that was created with the script > now log in to the client VM using mydomain.com\(picked name/username) and password is Password1 due to the script default 
 </p>
 <br />
 
@@ -166,7 +166,7 @@ Now open Active Directory Users and Computers > right-click the _EMPLOYEES folde
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Log in to the domain controller VM with Admin login info > right-click Start and click Run > type gpms.msc > in  GPMC click Default Domain Policy > then go to computer configuration, policies, Windows Settings, Security, Account policies, Account Lockout Policy > Set lockout duration for 30 minutes > Set account login threshold to 5 > Enable Allow admin account lockout > Set account lockout counter after 10 min > now log in to the client VM as the admin and open command prompt (CMD) > type in “gpupdate /force” (updates the policy instead of waiting for an automatic update)
+Log in to the domain controller VM with Admin login info > right-click Start and click Run > type gpms.msc > in  GPMC click Default Domain Policy > right click and go to computer configuration, policies, Windows Settings, Security, Account policies, Account Lockout Policy > Set lockout duration for 30 minutes > Set account login threshold to 5 > Enable Allow admin account lockout > Set account lockout counter after 10 min > now log in to the client VM as the admin and open command prompt (CMD) > type in “gpupdate /force” (updates the policy instead of waiting for an automatic update)
 </p>
 <br />
 
@@ -174,7 +174,7 @@ Log in to the domain controller VM with Admin login info > right-click Start and
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Log in to the domain controller VM with the admin login info > open Active Directory Users and Computers > click on employees and pick a random user > now attempt to log into the client VM with the user name mydomain.com\(picked random user) with an incorrect password 6 times > now on the domain controller Active Directory Users and Computers, right-click mydomain.com and click find and search the random user you attempted to login with > once found double click it and go to account (Next to unlock account there will be a message relaying that the account is locked) > check box unlock account and apply > now login into the client VM with the user you just unlocked (Password is Password1 for the User) 
+Log in to the domain controller VM with the admin login info > open Active Directory Users and Computers > click on employees and pick a random user (or use previously picked user) > now attempt to log into the client VM with the user name mydomain.com\(picked random user) with an incorrect password 6 times > now on the domain controller Active Directory Users and Computers, right-click mydomain.com and click find and search the random user you attempted to login with > once found double click it and go to account (Next to unlock account there will be a message relaying that the account is locked) > check box unlock account and apply > now login into the client VM with the user you just unlocked (Password is Password1 for the User) 
 </p>
 <br />
 
@@ -190,15 +190,7 @@ In the domain controller, find the user and disable the account > log out of the
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-In the domain controller, click Start and search “eventvwr.msc” > click the drop-down next to Windows logs > right click security and click find to search for the created user previously used > then observe the history of the account > now log in to the client VM and in the Start menu search “eventvwr.msc” and run as administrator > login to the pop-up with the admin login from earlier > go to windows logs > righ-click security and click find to search for the created user (Admin side shows more information like login failures and account unlocks)
+In the domain controller, click Start and search “eventvwr.msc” > click the drop-down next to Windows logs > right click security and click find to search for the created user previously used > then observe the history of the account > now log in to the client VM and in the Start menu search “eventvwr.msc” and run as administrator > login to the pop-up with the admin login from earlier > go to windows logs, security right-click and click find to search for the created user (Admin side shows more information like login failures and account unlocks)
 </p>
 <br />
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-
-</p>
-<br />
