@@ -94,7 +94,7 @@ Go to virtual machines and restart the client VM > log in to client VM in remote
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Log in to the domain controller using the public IP address > click Start, and find the Server Manager application > select Add Roles and Features > select Next twice > then confirm the destination server is the one created and select Next > in server roles, check box Active Directory Domain Services and click Add Features > click Next until you reach the page that says confirm installation selections and select Restart the destination server automatically if required and install > once installed you can close the tab
+Logged into the domain controller > click Start, and find the Server Manager application > select Add Roles and Features > select Next twice > then confirm the destination server is the one created and select Next > in server roles, check box Active Directory Domain Services and click Add Features > click Next until you reach the page that says confirm installation selections and select Restart the destination server automatically if required and install > once installed you can close the tab
 </p>
 <br />
 
@@ -102,7 +102,7 @@ Log in to the domain controller using the public IP address > click Start, and f
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Within Server Manager, select the flag icon > select promote this server to a domain controller > select add a new forest and add a Root domain name (example for the tutorial: mydomain.com) > select next and set a Directory Service Restore Mode password > select next and make sure the box for Create DNS delegation is unchecked > select next until prerequisites check and install > then click install when on the installation tab (this will restart the VM) > Restart and log back in to the domain controller with the username mydomain.com\(previous username for the domain controller) (Simply put logging in as a domain user since the vm was turned into a full fledged domain controller)
+Within Server Manager, select the flag icon > select promote this server to a domain controller > select add a new forest and add a Root domain name (example for the tutorial: mydomain.com) > select next and set a Directory Service Restore Mode password > select next and make sure the box for Create DNS delegation is unchecked > select next until prerequisites check and install > then click install when on the installation tab (this will restart the VM) > Restart and log back in to the domain controller with the username mydomain.com\(previous username for the domain controller) (Simply put, logging in as a domain user since the vm was turned into a full fledged domain controller)
 </p>
 <br />
 
@@ -110,7 +110,7 @@ Within Server Manager, select the flag icon > select promote this server to a do
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-In the domain controller VM, click Start and look for the folder Windows Administrative Tools, then click the dropdown > open Active Directory Users and Computers > right click mydomain.com > go to new and select Organizational Unit  and name it “EMPLOYEES” > and select ok > now repeat the previous step this time naming it “_ADMINS” > click the _ADMINS folder then right click the white area and choose new then user > create a user (Name, Last Name, and User login name) then click next set password and check the box Password never expires (for the tutorial) > click next and finish
+In the domain controller VM, click Start and look for the folder Windows Administrative Tools, then click the dropdown > open Active Directory Users and Computers > right click mydomain.com > go to new and select Organizational Unit  and name it “_EMPLOYEES” > and select ok > now repeat the previous step this time naming it “_ADMINS” > click the _ADMINS folder then right click the white area to the right and choose new then user > create a user (Name, Last Name, and User logon name) then click next set password and check the box Password never expires (for the tutorial) > click next and finish
 </p>
 <br />
 
@@ -118,7 +118,7 @@ In the domain controller VM, click Start and look for the folder Windows Adminis
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Right-click the created user, go to Properties > Member Of > Add > type in the box “domain admins,” and select check names (this will find the built-in domain admins group) > select ok > apply > ok (This portion gives the created user admin permission) > Now log out of the vm and reconnect to the VM this time using mydomain.com\(created admin username) as the username
+Right-click the created user, go to Properties > Member Of > Add > type in the box “domain admins,” and select check names (this will find the built-in domain admins group) > select ok > apply > ok (This portion gives the created user admin permission) > Now log out of the domain controller and reconnect to the domain controller this time using mydomain.com\(created admin username) as the username
 </p>
 <br />
 
@@ -126,7 +126,7 @@ Right-click the created user, go to Properties > Member Of > Add > type in the b
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now, within the client VM, right-click the Start menu and select System > select Rename this PC (advanced) > on the computer name tab, click Change > under Member of, type in mydomain.com, and click ok > now log in with the created admin login info (from the previous step). > Click ok on the welcome message, click close, and restart now (this will restart the client VM)
+Now, within the client VM, right-click the Start menu and select System > select advanced system settings > on the computer name tab, click Change > under Member of, type in mydomain.com, and click ok > Now, log in with the created admin login info (from the previous step). > Click ok on the welcome message, click close, and restart now (this will restart the client VM)
 </p>
 <br />
 
@@ -134,7 +134,7 @@ Now, within the client VM, right-click the Start menu and select System > select
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Log in to the domain controller with the admin user login > open Active Directory Users and Computers > to verify that the client user was added to the domain, select Computers. You will see that it has been added to the domain > now, create a new organizational unit called “_CLIENTS” by right-clicking mydomain.com, New, and organizational unit > now, in Computers, drag the client user into the “_CLIENTS” folder.
+Log in to the domain controller with the admin user login > open Active Directory Users and Computers > to verify that the client user was added to the domain, select Computers (You will see that it has been added to the domain) > create a new organizational unit called “_CLIENTS” by right-clicking mydomain.com, New, and organizational unit > now, in Computers, drag the client user into the “_CLIENTS” folder.
 </p>
 <br />
 
@@ -142,7 +142,7 @@ Log in to the domain controller with the admin user login > open Active Director
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Within the client VM, logged in with the admin user login, right-click Start, and go to System > click Remote Desktop > under User accounts, click “select users that can remotely access this PC” > type in domain users and click ok (this will allow all domain users to log in to that device) (now you can log into the client vm with your normal login from the beginning of the tutorial)
+Within the client VM, logged in with the admin user login, right-click Start, and go to System > scroll down and click Remote Desktop > Remote desktop users > click add and type in domain users and click ok (this will allow all domain users to log in to that device) (now you can log into the client vm with your normal login from the beginning of the tutorial)
 </p>
 <br />
 
@@ -150,7 +150,7 @@ Within the client VM, logged in with the admin user login, right-click Start, an
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Log in to the Domain controller VM with the admin user login info > in the Start menu, search for PowerShell ISE and run as an administrator > now copy this script (Link) (Used to create users) > now in PowerShell, create a new file and paste the script into the file within PowerShell > click the run button (this will start the creation of 10000 users) 
+Log in to the Domain controller VM with the admin user login info > in the Start menu, search for PowerShell ISE and run as an administrator > now copy this [Script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) (Used to create users) > now in PowerShell, create a new file and paste the script into the file within PowerShell > click the run button (this will start the creation of 10000 users) 
 </p>
 <br />
 
