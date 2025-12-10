@@ -62,7 +62,7 @@ To setup the client Vm select, create virtual machine > assign to the previously
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Once they are both deployed, go to your domain controller > network settings > click on the network interface card > select ipconfig > then set the allocation from dynamic to static and save
+Once they are both deployed, go to your domain controller > network settings > click on the network interface card > select ipconfig1 > then set the allocation from dynamic to static and save
 </p>
 <br />
 
@@ -70,7 +70,7 @@ Once they are both deployed, go to your domain controller > network settings > c
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-For the tutorial, we will disable the Windows firewall just for testing> open Remote Desktop and log in to the domain controller > Right-click the Start menu and run “wf.msc.” > Select Windows Defender Firewall Properties > turn off the firewall for both “Domain Profile, Private Profile, and Public Profile” > Apply and OK
+For the tutorial, we will disable the Windows firewall just for testing > within azure, copy the public IP address of the domain controller > open Remote Desktop and log in to the domain controller > Right-click the Start menu and run “wf.msc.” > Select Windows Defender Firewall Properties > turn off the firewall for both “Domain Profile, Private Profile, and Public Profile” > Apply and OK
 </p>
 <br />
 
@@ -78,7 +78,7 @@ For the tutorial, we will disable the Windows firewall just for testing> open Re
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Go to virtual machines > domain controller VM to find the private IP address >now go to client 1 > go to network settings > open the interface card > DNS servers > change from virtual network to custom > paste the private IP from the domain controller > and save
+Go to virtual machines > domain controller VM to find the private IP address (click the VM and scroll down) > now go to the client VM > go to network settings > open the interface card > DNS servers > change from virtual network to custom > paste the private IP from the domain controller > and save
 </p>
 <br />
 
@@ -86,7 +86,7 @@ Go to virtual machines > domain controller VM to find the private IP address >no
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Go to virtual machines and restart the client VM> log in to client VM in remote desktop > go back to Azure and copy-paste the private IP> open PowerShell in the VM > then type “ping (domain controller private ip) it should show the private IP of the domain controller in the ping > now run ipconfig /all (this should show the private IP address of the domain controller next to DNS Servers) 
+Go to virtual machines and restart the client VM > log in to client VM in remote desktop > go back to Azure and copy the Domain Controllers private IP > open PowerShell in the VM > then type “ping (domain controller private ip) it should show replies in the ping (if not go back and check to see if the windows firewalls are disabled or if you inputed the incorrect private IP in the client VM's NIC) > now run ipconfig /all (this should show the private IP address of the domain controller next to DNS Servers) 
 </p>
 <br />
 
