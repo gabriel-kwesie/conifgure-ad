@@ -22,7 +22,11 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Step 1: Plan and Prepare the Environment
 - Step 2: Install and configure Windows Server roles
 - Step 3: Promote the Server to a Domain Controller
-- Step 4: Post Deployment Configuration and Validation
+- Step 4: Post-Deployment Configuration and Validation
+- Step 5: Create and Organize User Accounts and Groups
+- Step 6: Define and Configure Group Policy Objects (GPOs)
+- Step 7: Link GPOs to Organizational Units (OUs)
+- Step 8: Monitor, Update, and Maintain Policies and Accounts
 
 <h2>Deployment and Configuration Steps</h2>
 
