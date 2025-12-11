@@ -35,7 +35,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/d62e4081-9997-4000-82bf-4eb3eebdd8dc" />
 </p>
 <p>
 Within Azure, create a resource group, only giving it a name and a region 
@@ -43,7 +43,7 @@ Within Azure, create a resource group, only giving it a name and a region
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="899" alt="Screenshot 2025-12-11 143710" src="https://github.com/user-attachments/assets/8078f4f6-6992-426b-8f6b-aa09f66fa3f4" />
 </p>
 <p>
 Create a virtual network > place in the previously created resource group > name  the virtual network > then review and create 
@@ -51,7 +51,7 @@ Create a virtual network > place in the previously created resource group > name
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/76d937c0-b03b-4307-b8b1-656b75fc2206" />
 </p>
 <p>
 To create a domain controller, first select create virtual machine > name virtual machine > assign VM to the same region as the virtual network > for the image select windows server 2022 > choose an appropriate size (for tutorial 2 vcpus and 8 GIB) > Set username and password > Under licensing check mark both boxes > then go to the network tab and put the vm within the previously created vnet > Review and create
@@ -59,15 +59,15 @@ To create a domain controller, first select create virtual machine > name virtua
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/570628e3-9efa-4450-8b13-1250a5cb8e84" />
 </p>
 <p>
-To setup the client Vm select, create virtual machine > assign to the previously create resource group > name the vm > assign to the same region in previously used > select windows 11 pro for the image > choose appropriate size (for tutorial 2 vcpus and 8 GIB) > Set username and password > check the box under licensing > then go to the networking tab and assign the VM to the previously created vnet > Review and create
+To create the client Vm select, create virtual machine > assign to the previously create resource group > name the vm > assign to the same region in previously used > select windows 11 pro for the image > choose appropriate size (for tutorial 2 vcpus and 8 GIB) > Set username and password > check the box under licensing > then go to the networking tab and assign the VM to the previously created vnet > Review and create
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/31e57e77-9a59-4fcf-867f-b89ea1d478cc" />
 </p>
 <p>
 Once they are both deployed, go to your domain controller > network settings > click on the network interface card > select ipconfig1 > then set the allocation from dynamic to static and save
@@ -75,7 +75,7 @@ Once they are both deployed, go to your domain controller > network settings > c
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/1fb30015-0f83-4703-9949-938796b7dab7" />
 </p>
 <p>
 For the tutorial, we will disable the Windows firewall just for testing > within azure, copy the public IP address of the domain controller > open Remote Desktop and log in to the domain controller > Right-click the Start menu and run “wf.msc.” > Select Windows Defender Firewall Properties > turn off the firewall for both “Domain Profile, Private Profile, and Public Profile” > Apply and OK
@@ -83,7 +83,7 @@ For the tutorial, we will disable the Windows firewall just for testing > within
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/e9747d3b-2be0-4979-8bca-911c160123bb" />
 </p>
 <p>
 Go to virtual machines > domain controller VM to find the private IP address (click the VM and scroll down) > now go to the client VM > go to network settings > open the interface card > DNS servers > change from virtual network to custom > paste the private IP from the domain controller > and save
@@ -91,23 +91,23 @@ Go to virtual machines > domain controller VM to find the private IP address (cl
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/06128c0c-aa57-4e22-b4e0-d52dbca222cb" />
 </p>
 <p>
-Go to virtual machines and restart the client VM > log in to client VM in remote desktop > go back to Azure and copy the Domain Controllers private IP > open PowerShell in the VM > then type “ping (domain controller private ip) it should show replies in the ping (if not go back and check to see if the windows firewalls are disabled or if you inputed the incorrect private IP in the client VM's NIC) > now run ipconfig /all (this should show the private IP address of the domain controller next to DNS Servers) 
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Logged into the domain controller > click Start, and find the Server Manager application > select Add Roles and Features > select Next twice > then confirm the destination server is the one created and select Next > in server roles, check box Active Directory Domain Services and click Add Features > click Next until you reach the page that says confirm installation selections and select Restart the destination server automatically if required and install > once installed you can close the tab
+Go to virtual machines and restart the client VM > log in to client VM in remote desktop > go back to Azure and copy the Domain Controllers private IP > open PowerShell in the VM > then type “ping (domain controller private ip) it should show replies in the ping (if not go back and check to see if the windows firewalls are disabled or if you inputed an incorrect private IP in the client VM's NIC) > now run ipconfig /all (this should show the private IP address of the domain controller next to DNS Servers) 
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/d930d55d-b25b-43be-add8-50b706729c9b" />
+</p>
+<p>
+Logged into the domain controller > click Start, and find the Server Manager application > select Add Roles and Features > select Next twice > then confirm the destination server is the one created and select Next > in server roles, check box Active Directory Domain Services and click Add Features > click Next until you reach the page that says confirm installation selections and check the box "Restart the destination server automatically if required" and install > once installed you can close the tab
+</p>
+<br />
+
+<p>
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/dc515d29-9447-452b-938c-b17c83feb55a" />
 </p>
 <p>
 Within Server Manager, select the flag icon > select promote this server to a domain controller > select add a new forest and add a Root domain name (example for the tutorial: mydomain.com) > select next and set a Directory Service Restore Mode password > select next and make sure the box for Create DNS delegation is unchecked > select next until prerequisites check and install > then click install when on the installation tab (this will restart the VM) > Restart and log back in to the domain controller with the username mydomain.com\(previous username for the domain controller) (Simply put, logging in as a domain user since the vm was turned into a full fledged domain controller)
