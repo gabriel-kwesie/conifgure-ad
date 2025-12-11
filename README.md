@@ -134,7 +134,7 @@ Right-click the created user, go to Properties > Member Of > Add > type in the b
 <img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/ef6d177d-a4f6-427d-ab28-2f5c2c4f5207" />
 </p>
 <p>
-Now, within the client VM, right-click the Start menu and select System > select advanced system settings > on the computer name tab, click Change > under Member of, type in mydomain.com, and click ok > Now, log in with the created admin login info (from the previous step). > Click ok on the welcome message, click close, and restart now (this will restart the client VM)
+Now, within the client VM, right-click the Start menu, select System > Advanced System Settings > on the Computer Name tab, click Change  under Member of, click domain, type in mydomain.com, and click OK> Now, log in with the created admin login info (from the previous step). > Click ok on the welcome message, click close, and restart now (this will restart the client VM)
 </p>
 <br />
 
