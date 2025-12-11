@@ -139,7 +139,7 @@ Now, within the client VM, right-click the Start menu, select System > Advanced 
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/464bdf7e-12f7-4065-aa79-e5e78a5c5a74" />
 </p>
 <p>
 Log in to the domain controller with the admin user login > open Active Directory Users and Computers > to verify that the client user was added to the domain, select Computers (You will see that it has been added to the domain) > create a new organizational unit called “_CLIENTS” by right-clicking mydomain.com, New, and organizational unit > now, in Computers, drag the client user into the “_CLIENTS” folder.
@@ -147,7 +147,7 @@ Log in to the domain controller with the admin user login > open Active Director
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/cc903d89-d6e6-4f4b-88d2-9e2cc4f3e9dc" />
 </p>
 <p>
 Within the client VM, logged in with the admin user login, right-click Start, and go to System > scroll down and click Remote Desktop > Remote desktop users > click add and type in domain users and click ok (this will allow all domain users to log in to that device) (now you can log into the client vm with your normal login from the beginning of the tutorial)
@@ -155,7 +155,7 @@ Within the client VM, logged in with the admin user login, right-click Start, an
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/9642b930-a6dd-42ea-8f47-ba16ba8a321b" />
 </p>
 <p>
 Log in to the Domain controller VM with the admin user login info > in the Start menu, search for PowerShell ISE and run as an administrator > now copy the script at the top (Used to create random users) > now in PowerShell, create a new file and paste the script into the file within PowerShell > click the run button (this will start the creation of 10000 users into the _EMPLOYEES Folder) 
@@ -163,7 +163,7 @@ Log in to the Domain controller VM with the admin user login info > in the Start
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="898" alt="image" src="https://github.com/user-attachments/assets/5e4bbb85-46e8-4f4b-8686-1c35830db12f" />
 </p>
 <p>
 Now open Active Directory Users and Computers > right-click the _EMPLOYEES folder and refresh > within the folder pick any name/username that was created with the script > now log in to the client VM using mydomain.com\(picked name/username) and password is Password1 due to the script default 
@@ -171,10 +171,10 @@ Now open Active Directory Users and Computers > right-click the _EMPLOYEES folde
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/b116b1dc-8076-49c1-b5be-6a7d6846dc76" />
 </p>
 <p>
-Log in to the domain controller VM with Admin login info > right-click Start and click Run > type gpms.msc > in  GPMC click Default Domain Policy > right click and go to computer configuration, policies, Windows Settings, Security, Account policies, Account Lockout Policy > Set lockout duration for 30 minutes > Set account login threshold to 5 > Enable Allow admin account lockout > Set account lockout counter after 10 min > now log in to the client VM as the admin and open command prompt (CMD) > type in “gpupdate /force” (updates the policy instead of waiting for an automatic update)
+Log in to the domain controller VM with Admin login info > right-click Start and click Run > type gpms.msc > in  GPMC, click the drop down next to mydomain.com > Default Domain Policy > right click and go to computer configuration, policies, Windows Settings, Security, Account policies, Account Lockout Policy > Set lockout duration for 30 minutes > Set account login threshold to 5 > Enable Allow admin account lockout > Set account lockout counter after 10 min > now log in to the client VM as the admin and open command prompt (CMD) > type in “gpupdate /force” (updates the policy instead of waiting for an automatic update)
 </p>
 <br />
 
