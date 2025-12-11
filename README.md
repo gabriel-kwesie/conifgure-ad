@@ -28,7 +28,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Step 7: Link GPOs to Organizational Units (OUs)
 - Step 8: Monitor, Update, and Maintain Policies and Accounts
 
-<h2>Script (later use in the tutorial)</h2>
+<h2>Script (For later use in the tutorial)</h2>
 
 [Script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)
 
