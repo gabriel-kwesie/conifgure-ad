@@ -115,7 +115,7 @@ Within Server Manager, select the flag icon > select promote this server to a do
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/cf1be840-4046-479e-8d4c-940b55b2aa12" />
 </p>
 <p>
 In the domain controller VM, click Start and look for the folder Windows Administrative Tools, then click the dropdown > open Active Directory Users and Computers > right click mydomain.com > go to new and select Organizational Unit  and name it “_EMPLOYEES” > and select ok > now repeat the previous step this time naming it “_ADMINS” > click the _ADMINS folder then right click the white area to the right and choose new then user > create a user (Name, Last Name, and User logon name) then click next set password and check the box Password never expires (for the tutorial) > click next and finish
@@ -123,7 +123,7 @@ In the domain controller VM, click Start and look for the folder Windows Adminis
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/a884a4a0-1665-4ed6-849e-b3946ead9e31" />
 </p>
 <p>
 Right-click the created user, go to Properties > Member Of > Add > type in the box “domain admins,” and select check names (this will find the built-in domain admins group) > select ok > apply > ok (This portion gives the created user admin permission) > Now log out of the domain controller and reconnect to the domain controller this time using mydomain.com\(created admin username) as the username
@@ -131,7 +131,7 @@ Right-click the created user, go to Properties > Member Of > Add > type in the b
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/ef6d177d-a4f6-427d-ab28-2f5c2c4f5207" />
 </p>
 <p>
 Now, within the client VM, right-click the Start menu and select System > select advanced system settings > on the computer name tab, click Change > under Member of, type in mydomain.com, and click ok > Now, log in with the created admin login info (from the previous step). > Click ok on the welcome message, click close, and restart now (this will restart the client VM)
