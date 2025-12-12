@@ -179,7 +179,7 @@ Log in to the domain controller VM with Admin login info > right-click Start and
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/bedbaad1-9a32-4213-a0c8-380c39a426a4" />
 </p>
 <p>
 Log in to the domain controller VM with the admin login info > open Active Directory Users and Computers > click on employees and pick a random user (or use previously picked user) > now attempt to log into the client VM with the user name mydomain.com\(picked random user) with an incorrect password 6 times > now on the domain controller Active Directory Users and Computers, right-click mydomain.com and click find and search the random user you attempted to login with > once found double click it and go to account (Next to unlock account there will be a message relaying that the account is locked) > check box unlock account and apply > now login into the client VM with the user you just unlocked (Password is Password1 for the User) 
@@ -187,15 +187,15 @@ Log in to the domain controller VM with the admin login info > open Active Direc
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/0ee746dc-e8a3-448c-9e65-7f5dfcfa4004" />
 </p>
 <p>
-In the domain controller, find the user and disable the account > log out of the client VM and attempt to log in again > go back to the domain controller and enable the account > log back into the user in the client VM
+In the domain controller, find the user and disable the account > log out of the client VM and attempt to log in again (a pop-up will appear stating the account is disabled) > go back to the domain controller and enable the account > log back into the user in the client VM
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/4d6619e4-2208-40ff-8112-5a4b6d8a253e" />
 </p>
 <p>
 In the domain controller, click Start and search “eventvwr.msc” > click the drop-down next to Windows logs > right click security and click find to search for the created user previously used > then observe the history of the account > now log in to the client VM and in the Start menu search “eventvwr.msc” and run as administrator > login to the pop-up with the admin login from earlier > go to windows logs, security right-click and click find to search for the created user (Admin side shows more information like login failures and account unlocks)
